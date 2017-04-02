@@ -1,0 +1,80 @@
+@model ZenithWebSite.Models.Zenith.Event
+
+@{
+    ViewData["Title"] = "Event Details";
+
+    var startMinutes = "";
+    if (Model.EventFromDatetime.Minute < 10)
+    {
+        startMinutes = "0" + Model.EventFromDatetime.Minute.ToString();
+    }
+    else
+    {
+        startMinutes = Model.EventFromDatetime.Minute.ToString();
+    }
+
+    var endMinutes = "";
+    if (Model.EventToDatetime.Minute < 10)
+    {
+        endMinutes = "0" + Model.EventToDatetime.Minute.ToString();
+    }
+    else
+    {
+        endMinutes = Model.EventToDatetime.Minute.ToString();
+    }
+}
+
+<h2>Event Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Activity.ActivityDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Activity.ActivityDescription)
+        </dd>
+        <dd><br /></dd>
+        <dt>
+            Event Start Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventFromDatetime.Day)/@Html.DisplayFor(model => model.EventFromDatetime.Month)/@Html.DisplayFor(model => model.EventFromDatetime.Year)
+        </dd>
+        <dd><br /></dd>
+        <dt>
+            Event Start Time
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventFromDatetime.Hour):@startMinutes
+        </dd>
+        <dt></dt>
+        <dd><br /></dd>
+        <dt>
+            Event Start Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventToDatetime.Day)/@Html.DisplayFor(model => model.EventToDatetime.Month)/@Html.DisplayFor(model => model.EventToDatetime.Year)
+        </dd>
+        <dd><br /></dd>
+        <dt>
+            Event End Time
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventToDatetime.Hour):@endMinutes
+        </dd>
+        <dt></dt>
+        <dd><br /></dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.EventId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,9 @@
+D:\BCIT\ASP.NET MVC Web Application\Assignment 2\ZenithSociety\ZenithWebSite\bin\Debug\netcoreapp1.1\ZenithWebSite.deps.json
+D:\BCIT\ASP.NET MVC Web Application\Assignment 2\ZenithSociety\ZenithWebSite\bin\Debug\netcoreapp1.1\ZenithWebSite.runtimeconfig.json
+D:\BCIT\ASP.NET MVC Web Application\Assignment 2\ZenithSociety\ZenithWebSite\bin\Debug\netcoreapp1.1\ZenithWebSite.runtimeconfig.dev.json
+D:\BCIT\ASP.NET MVC Web Application\Assignment 2\ZenithSociety\ZenithWebSite\bin\Debug\netcoreapp1.1\ZenithWebSite.dll
+D:\BCIT\ASP.NET MVC Web Application\Assignment 2\ZenithSociety\ZenithWebSite\bin\Debug\netcoreapp1.1\ZenithWebSite.pdb
+D:\BCIT\ASP.NET MVC Web Application\Assignment 2\ZenithSociety\ZenithWebSite\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
+D:\BCIT\ASP.NET MVC Web Application\Assignment 2\ZenithSociety\ZenithWebSite\obj\Debug\netcoreapp1.1\ZenithWebSite.AssemblyInfo.cs
+D:\BCIT\ASP.NET MVC Web Application\Assignment 2\ZenithSociety\ZenithWebSite\obj\Debug\netcoreapp1.1\ZenithWebSite.dll
+D:\BCIT\ASP.NET MVC Web Application\Assignment 2\ZenithSociety\ZenithWebSite\obj\Debug\netcoreapp1.1\ZenithWebSite.pdb

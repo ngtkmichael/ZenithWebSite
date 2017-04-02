@@ -1,0 +1,179 @@
+@model IEnumerable<ZenithWebSite.Models.Zenith.Activity>
+
+@{
+    ViewData["Title"] = "Manage Activities";
+
+    int i = 0;
+    int modelCount = Model.Count();
+    var lstModel = Model.ToList();
+}
+
+<h2>Manage Activities</h2>
+
+<p>
+    <a asp-action="Create">Create New New Activity</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ActivityCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActivityDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (i = 0; i < lstModel.Count; i++)
+        {
+            // If first event of list
+            if (i == 0)
+            {
+                var strCode = lstModel[i].ActivityCode;
+                switch (strCode.Substring(0, 2))
+                {
+                    case "AP":
+                        <tr class="info">
+                            <td>Group : Adult</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        break;
+                    case "GP":
+                        <tr class="info">
+                            <td>Group : General Public</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        break;
+                    case "SC":
+                        <tr class="info">
+                            <td>Group : Senior Citizens</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        break;
+                    case "YL":
+                        <tr class="info">
+                            <td>Group : Young Ladies</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        break;
+                    case "YP":
+                        <tr class="info">
+                            <td>Group : Youth</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        break;
+                    default:
+                        <tr class="info">
+                            <td>Group : Others</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        break;
+                }
+                <tr>
+                    <td></td>
+                    <td>
+                        @Html.DisplayFor(modelItem => lstModel[i].ActivityCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => lstModel[i].ActivityDescription)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@lstModel[i].ActivityId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@lstModel[i].ActivityId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@lstModel[i].ActivityId">Delete</a>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                // If StartDate of previous event NOT EQUALS StartDate of current event, add row to table to display date
+                var strPreviousCode = lstModel[i - 1].ActivityCode;
+                var strCurrentCode = lstModel[i].ActivityCode;
+                if (strPreviousCode.Substring(0, 2) != strCurrentCode.Substring(0, 2))
+                {
+                    switch (strCurrentCode.Substring(0, 2))
+                    {
+                        case "AP":
+                            <tr class="info">
+                                <td>Group : Adult</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            break;
+                        case "GP":
+                            <tr class="info">
+                                <td>Group : General Public</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            break;
+                        case "SC":
+                            <tr class="info">
+                                <td>Group : Senior Citizens</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            break;
+                        case "YL":
+                            <tr class="info">
+                                <td>Group : Young Ladies</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            break;
+                        case "YP":
+                            <tr class="info">
+                                <td>Group : Youth</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            break;
+                        default:
+                            <tr class="info">
+                                <td>Group : Others</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            break;
+                    }
+                }
+                <tr>
+                    <td></td>
+                    <td>
+                        @Html.DisplayFor(modelItem => lstModel[i].ActivityCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => lstModel[i].ActivityDescription)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@lstModel[i].ActivityId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@lstModel[i].ActivityId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@lstModel[i].ActivityId">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>
+

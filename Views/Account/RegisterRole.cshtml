@@ -1,0 +1,26 @@
+﻿@model RegisterViewModel
+@{
+    ViewBag.Title = "Register Role";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-controller="Account" asp-action="RegisterRole" method="post" class="form-horizontal">
+    <h4>Assign a role to a username:</h4>
+    <hr />
+    <div class="form-group">
+        <label class="col-md-2 control-label">Select Username</label>
+        <select asp-for="UserName" class="form-control" asp-items="ViewBag.UserName"></select>
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Select Role</label>
+        <select asp-for="Name" class="form-control" asp-items="ViewBag.Name"></select>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+</form>
